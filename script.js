@@ -141,7 +141,8 @@ function onTargetClick(e) {
     e.stopPropagation();
     score++;
     targetsFound++;
-    e.target.style.display = 'none';
+    //e.target.style.display = 'none';
+    e.target.src = 'pb-color.png';
     updateScore();
     updateTargetsLeft();
 
