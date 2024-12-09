@@ -47,7 +47,6 @@ body, html {
     color: greenyellow;
     background: rgba(0, 0, 0, 0.7);
     padding: 10px;
-    border-radius: 5px;
 }
 
 #score, #targets-left, #games-played, #timer, #total-time {
