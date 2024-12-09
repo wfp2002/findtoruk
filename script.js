@@ -6,6 +6,7 @@ let startTime, timerInterval;
 let numberOfTargets = 5;
 let gamesPlayed = 1;
 let totalTimeSpent = 0;
+const maxGames = 2;
 
 const scoreElement = document.getElementById('score');
 const targetsLeftElement = document.getElementById('targets-left');
@@ -18,8 +19,12 @@ const startButton = document.getElementById('start-button');
 const winMessage = document.getElementById('win-message');
 const loseMessage = document.getElementById('lose-message');
 const finalTime = document.getElementById('final-time');
+const finalScore = document.getElementById('final-score');
+const finalTotalTime = document.getElementById('final-total-time');
 const newGameButton = document.getElementById('new-game-button');
 const tryAgainButton = document.getElementById('try-again-button');
+const winText = document.getElementById('win-text');
+const newGameContainer = document.getElementById('new-game-container');
 
 function updateScore() {
     scoreElement.textContent = `Score: ${score}`;
@@ -96,18 +101,22 @@ function startGame() {
     winMessage.style.display = 'none';
     loseMessage.style.display = 'none';
 
-    // Remove static image and add background image and targets
+    // Update static image based on the game number
     const staticImage = document.getElementById('static-image');
-    staticImage.style.display = 'none';
 
-    const backgroundImage = document.createElement('img');
-    //backgroundImage.src = 'https://via.placeholder.com/5000';
-    backgroundImage.src = 'static.jpg';
-    backgroundImage.id = 'background-image';
-    backgroundImage.alt = 'Background';
-    backgroundImage.style.width = '5000px';
-    backgroundImage.style.height = '5000px';
-    gameArea.appendChild(backgroundImage);
+    if (gamesPlayed % 2 == 0) {
+        staticImage.src = `static2.jpg`;
+    } else {
+        staticImage.src = `static1.jpg`;
+    }
+    //staticImage.src = `static${gamesPlayed}.jpg`;
+    staticImage.style.display = 'block';
+
+    // Remove background image if exists
+    const backgroundImage = document.getElementById('background-image');
+    if (backgroundImage) {
+        backgroundImage.remove();
+    }
 
     addTargets(numberOfTargets);
 }
@@ -119,11 +128,10 @@ function addTargets(count) {
     // Add new targets within the 5000x5000px area
     for (let i = 0; i < count; i++) {
         const target = document.createElement('img');
-        //target.src = 'https://via.placeholder.com/50';
         target.src = 'pb.png';
         target.className = 'target';
-        target.style.top = `${Math.random() * (5000 - 300)}px`;
-        target.style.left = `${Math.random() * (5000 - 150)}px`;
+        target.style.top = `${Math.random() * (5000 - 50)}px`;
+        target.style.left = `${Math.random() * (5000 - 50)}px`;
         target.addEventListener('click', onTargetClick);
         gameArea.appendChild(target);
     }
@@ -146,8 +154,17 @@ function onTargetClick(e) {
 
         const minutes = Math.floor(elapsedTime / 60);
         const seconds = elapsedTime % 60;
-        finalTime.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        winMessage.style.display = 'block';
+        //finalTime.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
+        if (gamesPlayed < maxGames) {
+            winMessage.style.display = 'block';
+            newGameContainer.style.display = 'block';
+            winText.innerHTML = `<div>You Win!</div><div>Your Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</div>`;
+        } else {
+            winMessage.style.display = 'block';
+            newGameContainer.style.display = 'none';
+            winText.innerHTML = `<div style='font-size: 20px'>You Win!<div>Score: ${score}</div><div>Your Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</div><div>Total Time: ${totalTimeElement.textContent.split(': ')[1]}</div></div>`;
+        }
     }
 }
 
@@ -157,9 +174,11 @@ function loseGame() {
 }
 
 function startNewGame() {
-    numberOfTargets++;
-    gamesPlayed++;
-    startGame();
+    if (gamesPlayed < maxGames) {
+        numberOfTargets++;
+        gamesPlayed++;
+        startGame();
+    }
 }
 
 function tryAgain() {

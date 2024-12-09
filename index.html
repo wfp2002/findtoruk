@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find the Object Game</title>
+    <title>Find Toruk Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="game-container">
         <div id="game-area">
-            <img src="static.jpg" id="static-image" alt="Static">
+            <img src="static1.jpg" id="static-image" alt="Static">
         </div>
     </div>
     <div id="info-bar">
@@ -21,8 +21,13 @@
     </div>
     <button id="start-button">Start Game</button>
     <div id="win-message" style="display: none;">
-        You win! Your time: <span id="final-time"></span>
-        <button id="new-game-button">Start New Game</button>
+        <span id="win-text"></span>
+        <div id="final-stats" style="font-size: 20px">
+            
+        </div>
+        <div id="new-game-container">
+            <button id="new-game-button">Continue to next level ?</button>
+        </div>
     </div>
     <div id="lose-message" style="display: none;">
         You lose! Try again?
