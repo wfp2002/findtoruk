@@ -30,8 +30,8 @@ body, html {
 
 .target {
     position: absolute;
-    width: 70px; /* Adjust size as needed */
-    height: 70px; /* Adjust size as needed */
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
 }
 
 #info-bar {
@@ -45,6 +45,7 @@ body, html {
     color: greenyellow;
     background: rgba(0, 0, 0, 0.7);
     padding: 4px;
+    padding-left: 5px;
 }
 
 
