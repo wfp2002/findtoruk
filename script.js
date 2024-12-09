@@ -130,7 +130,7 @@ function addTargets(count) {
         const target = document.createElement('img');
         target.src = 'pb.png';
         target.className = 'target';
-        target.style.top = `${Math.random() * (5000 - 50)}px`;
+        target.style.top = `${Math.random() * (5000 - 250)}px`;
         target.style.left = `${Math.random() * (5000 - 50)}px`;
         target.addEventListener('click', onTargetClick);
         gameArea.appendChild(target);
