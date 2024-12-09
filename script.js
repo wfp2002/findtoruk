@@ -102,7 +102,7 @@ function startGame() {
 
     const backgroundImage = document.createElement('img');
     //backgroundImage.src = 'https://via.placeholder.com/5000';
-    backgroundImage.src = 'static.png';
+    backgroundImage.src = 'static.jpg';
     backgroundImage.id = 'background-image';
     backgroundImage.alt = 'Background';
     backgroundImage.style.width = '5000px';
