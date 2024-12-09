@@ -41,13 +41,12 @@ body, html {
     justify-content: space-around;
     align-items: center;
     position: absolute;
-    top: 10px;
+    top: 0px;
     width: 100%;
     font-size: 12px;
     color: greenyellow;
     background: rgba(0, 0, 0, 0.7);
-    padding-top: 40px;
-    padding-bottom: 3px;
+    padding: 10px;
     border-radius: 5px;
 }
 
