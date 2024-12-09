@@ -6,7 +6,7 @@ let startTime, timerInterval;
 let numberOfTargets = 5;
 let gamesPlayed = 1;
 let totalTimeSpent = 0;
-const maxGames = 5;
+const maxGames = 3;
 
 const scoreElement = document.getElementById('score');
 const targetsLeftElement = document.getElementById('targets-left');
@@ -134,6 +134,7 @@ function addTargets(count) {
         target.style.left = `${Math.random() * (5000 - 50)}px`;
         target.addEventListener('click', onTargetClick);
         gameArea.appendChild(target);
+        //console.log('top:',Math.random() * (5000 - 250),'left:',Math.random() * (5000 - 50));
     }
 }
 
