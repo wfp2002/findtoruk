@@ -130,8 +130,8 @@ function addTargets(count) {
         const target = document.createElement('img');
         target.src = 'pb.png';
         target.className = 'target';
-        target.style.top = `${Math.random() * (5000 - 250)}px`;
-        target.style.left = `${Math.random() * (5000 - 50)}px`;
+        target.style.top = `${Math.random() * (5000 - 300)}px`;
+        target.style.left = `${Math.random() * (5000 - 300)}px`;
         target.addEventListener('click', onTargetClick);
         gameArea.appendChild(target);
         //console.log('top:',Math.random() * (5000 - 250),'left:',Math.random() * (5000 - 50));
@@ -144,6 +144,7 @@ function onTargetClick(e) {
     targetsFound++;
     //e.target.style.display = 'none';
     e.target.src = 'pb-color.png';
+    //e.target.src = 'explosion2.gif';
     updateScore();
     updateTargetsLeft();
 
