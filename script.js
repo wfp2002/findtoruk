@@ -6,7 +6,7 @@ let startTime, timerInterval;
 let numberOfTargets = 5;
 let gamesPlayed = 1;
 let totalTimeSpent = 0;
-const maxGames = 2;
+const maxGames = 5;
 
 const scoreElement = document.getElementById('score');
 const targetsLeftElement = document.getElementById('targets-left');
@@ -163,7 +163,7 @@ function onTargetClick(e) {
         } else {
             winMessage.style.display = 'block';
             newGameContainer.style.display = 'none';
-            winText.innerHTML = `<div style='font-size: 20px'>You Win!<div>Score: ${score}</div><div>Your Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</div><div>Total Time: ${totalTimeElement.textContent.split(': ')[1]}</div></div>`;
+            winText.innerHTML = `<div style='font-size: 20px'>You Finished!<div>Score: ${score}</div><div>Your Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</div><div>Total Time: ${totalTimeElement.textContent.split(': ')[1]}</div></div>`;
         }
     }
 }

@@ -30,9 +30,8 @@ body, html {
 
 .target {
     position: absolute;
-    width: 4500px; /* Adjust size as needed */
-    height: 4500px; /* Adjust size as needed */
-    border: 10px solid red;
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
 }
 
 #info-bar {
