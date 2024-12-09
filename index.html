@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Object Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-area">
+            <img src="static.png" id="static-image" alt="Static">
+        </div>
+    </div>
+    <div id="info-bar">
+        <div id="score">Score: 10</div>
+        <div id="targets-left">Left: 5</div>
+        <div id="games-played">Games: 1</div>
+        <div id="timer">Time: 00:00</div>
+        <div id="total-time">TT Time: 00:00</div>
+    </div>
+    <button id="start-button">Start Game</button>
+    <div id="win-message" style="display: none;">
+        You win! Your time: <span id="final-time"></span>
+        <button id="new-game-button">Start New Game</button>
+    </div>
+    <div id="lose-message" style="display: none;">
+        You lose! Try again?
+        <button id="try-again-button">Try Again</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
