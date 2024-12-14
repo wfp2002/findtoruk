@@ -166,7 +166,7 @@ function onTargetClick(e) {
         } else {
             winMessage.style.display = 'block';
             newGameContainer.style.display = 'none';
-            winText.innerHTML = `<div style='font-size: 20px'>You Finished!<div>Score: ${score}</div><div>Your Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</div><div>Total Time: ${totalTimeElement.textContent.split(': ')[1]}</div></div>`;
+            winText.innerHTML = `<div style='font-size: 20px'>You Finished!<div>Score: ${score}</div><div>Your Time: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</div><div>Total Time: ${totalTimeElement.textContent.split(': ')[1]}</div><div>Motion Code: ${Math.floor(Math.random() * (99999 - 12000 + 1) + 12000)}</div></div>`;
         }
     }
 }
